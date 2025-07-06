@@ -1,303 +1,399 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Інструкція по створенню RPG в Roblox Studio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-        .task-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .task-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Інструкція по створенню RPG в Roblox Studio</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+   <style>
+       body {
+           font-family: 'Montserrat', sans-serif;
+       }
+       .task-card {
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+       }
+       .task-card:hover {
+           transform: translateY(-10px);
+           box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+       }
+       .hidden {
+           display: none;
+       }
+       .structure-box {
+           background-color: #f8f9fa;
+           border-left: 4px solid #4a5568;
+           padding: 16px;
+           border-radius: 8px;
+           font-family: 'Courier New', Courier, monospace;
+           white-space: pre;
+           overflow-x: auto;
+           color: #2d3748;
+       }
+       .alert-box {
+           background-color: #fffbeb;
+           border-left: 4px solid #f59e0b;
+           padding: 1rem;
+           border-radius: 0.5rem;
+       }
+   </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <div class="container mx-auto px-4 py-12">
-        <!-- Головна сторінка з картками -->
-        <div id="home-page">
-            <header class="text-center mb-12">
-                <h1 class="text-4xl md:text-5xl font-bold text-blue-600 mb-2">Створюємо свою RPG в Roblox!</h1>
-                <p class="text-lg text-gray-600">Покрокова інструкція для юних розробників</p>
-            </header>
+   <div class="container mx-auto px-4 py-12">
+       <!-- Головна сторінка з картками -->
+       <div id="home-page">
+           <header class="text-center mb-12">
+               <h1 class="text-4xl md:text-5xl font-bold text-blue-600 mb-2">Створюємо свою RPG в Roblox!</h1>
+               <p class="text-lg text-gray-600">Покрокова інструкція для юних розробників</p>
+           </header>
+           
+           <!-- Важливе нагадування -->
+           <div class="alert-box text-center mb-12 max-w-4xl mx-auto">
+               <h3 class="font-bold text-lg text-amber-700">Увага, юний розробнику!</h3>
+               <p class="text-amber-600 mt-1">Цей сайт — твій помічник. Але якщо щось незрозуміло або не виходить, пам'ятай: ти завжди можеш відкрити детальний довідник до цієї теми на освітній платформі <strong>Logika</strong>!</p>
+           </div>
 
-            <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Завдання 1: Вибір Класів Героя -->
-                <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/3498db/ffffff?text=Вибір+Класу" alt="Зображення вибору класу" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-2">Завдання 1: Вибір Класів Героя</h2>
-                        <p class="text-gray-700 mb-4">Створіть меню, де гравець зможе обрати свій клас: могутнього Лицаря, спритного Лучника або мудрого Мага.</p>
-                        <button onclick="showPage('page-task1')" class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors">Читати більше</button>
-                    </div>
-                </div>
+           <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               
+               <!-- Завдання 1: Вибір Класів Героя -->
+               <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                   <!-- PHOTO_PLACEHOLDER -->
+                   <img src="https://placehold.co/600x400/3498db/ffffff?text=Вибір+Класу" alt="Зображення вибору класу" class="w-full h-48 object-cover">
+                   <div class="p-6 flex flex-col flex-grow">
+                       <h2 class="text-2xl font-bold mb-2">Завдання 1: Вибір Класів Героя</h2>
+                       <p class="text-gray-700 mb-4 flex-grow">Створіть меню, де гравець зможе обрати свій клас: могутнього Лицаря, спритного Лучника або мудрого Мага.</p>
+                       <button onclick="showPage('page-task1')" class="w-full mt-auto bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors">Читати більше</button>
+                   </div>
+               </div>
 
-                <!-- Завдання 2: Редизайн Магазину -->
-                <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Магазин" alt="Зображення магазину" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-2">Завдання 2: Редизайн та Розширення Магазину</h2>
-                        <p class="text-gray-700 mb-4">Зробіть магазин унікальним! Змініть його вигляд, додайте нову зброю та налаштуйте NPC-торговця.</p>
-                        <button onclick="showPage('page-task2')" class="w-full bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors">Читати більше</button>
-                    </div>
-                </div>
+               <!-- Завдання 2: Створення Магазину з Нуля -->
+               <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                   <!-- PHOTO_PLACEHOLDER -->
+                   <img src="https://placehold.co/600x400/16a085/ffffff?text=Новий+Магазин" alt="Зображення створення магазину" class="w-full h-48 object-cover">
+                   <div class="p-6 flex flex-col flex-grow">
+                       <h2 class="text-2xl font-bold mb-2">Завдання 2: Створення Магазину з Нуля</h2>
+                       <p class="text-gray-700 mb-4 flex-grow">Покрокова інструкція для створення системи магазину, якщо у вас її ще немає.</p>
+                       <button onclick="showPage('page-task2')" class="w-full mt-auto bg-teal-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-600 transition-colors">Читати більше</button>
+                   </div>
+               </div>
 
-                <!-- Завдання 3: Ворожі NPC -->
-                <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Вороги" alt="Зображення ворожого NPC" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-2">Завдання 3: Створення Ворожих NPC</h2>
-                        <p class="text-gray-700 mb-4">Додайте ворогів, які патрулюватимуть територію та з яких після смерті випадатимуть монети.</p>
-                        <button onclick="showPage('page-task3')" class="w-full bg-red-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Читати більше</button>
-                    </div>
-                </div>
+               <!-- Завдання 3: Редизайн Магазину -->
+               <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                   <!-- PHOTO_PLACEHOLDER -->
+                   <img src="https://placehold.co/600x400/2ecc71/ffffff?text=Редизайн" alt="Зображення редизайну магазину" class="w-full h-48 object-cover">
+                   <div class="p-6 flex flex-col flex-grow">
+                       <h2 class="text-2xl font-bold mb-2">Завдання 3: Редизайн та Розширення Магазину</h2>
+                       <p class="text-gray-700 mb-4 flex-grow">Якщо у вас вже є магазин, зробіть його унікальним! Змініть вигляд, додайте нову зброю та налаштуйте NPC-торговця.</p>
+                       <button onclick="showPage('page-task3')" class="w-full mt-auto bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600 transition-colors">Читати більше</button>
+                   </div>
+               </div>
 
-                <!-- Завдання 4: Екран Смерті -->
-                <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/9b59b6/ffffff?text=Game+Over" alt="Зображення екрану смерті" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-2">Завдання 4: Кастомізація Екрана Смерті</h2>
-                        <p class="text-gray-700 mb-4">Зробіть екран поразки особливим! Змініть зображення та звук, щоб зробити гру більш атмосферною.</p>
-                        <button onclick="showPage('page-task4')" class="w-full bg-purple-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-600 transition-colors">Читати більше</button>
-                    </div>
-                </div>
-                
-                <!-- Завдання 5: Легендарний Скарб -->
-                <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/f1c40f/ffffff?text=Скарб" alt="Зображення скарбу" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-2">Завдання 5: Створення Легендарного Скарбу</h2>
-                        <p class="text-gray-700 mb-4">Створіть унікальний артефакт. Сховайте його у важкодоступному місці, наприклад, за паркур-випробуванням.</p>
-                        <button onclick="showPage('page-task5')" class="w-full bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-yellow-600 transition-colors">Читати більше</button>
-                    </div>
-                </div>
+               <!-- Завдання 4: Ворожі NPC -->
+               <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                   <!-- PHOTO_PLACEHOLDER -->
+                   <img src="https://placehold.co/600x400/e74c3c/ffffff?text=Вороги" alt="Зображення ворожого NPC" class="w-full h-48 object-cover">
+                   <div class="p-6 flex flex-col flex-grow">
+                       <h2 class="text-2xl font-bold mb-2">Завдання 4: Створення Ворожих NPC</h2>
+                       <p class="text-gray-700 mb-4 flex-grow">Додайте ворогів, які патрулюватимуть територію та з яких після смерті випадатимуть монети.</p>
+                       <button onclick="showPage('page-task4')" class="w-full mt-auto bg-red-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">Читати більше</button>
+                   </div>
+               </div>
 
-                <!-- Завдання 6: Привітальний NPC -->
-                <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <img src="https://placehold.co/600x400/1abc9c/ffffff?text=NPC" alt="Зображення NPC" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-bold mb-2">Завдання 6: Привітальний NPC</h2>
-                        <p class="text-gray-700 mb-4">Додайте персонажа, який зустрічатиме новачків та розповідатиме їм про мету гри за допомогою діалогів.</p>
-                        <button onclick="showPage('page-task6')" class="w-full bg-teal-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-600 transition-colors">Читати більше</button>
-                    </div>
-                </div>
-            </main>
-        </div>
+               <!-- Завдання 5: Екран Смерті -->
+               <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                   <!-- PHOTO_PLACEHOLDER -->
+                   <img src="https://placehold.co/600x400/9b59b6/ffffff?text=Game+Over" alt="Зображення екрану смерті" class="w-full h-48 object-cover">
+                   <div class="p-6 flex flex-col flex-grow">
+                       <h2 class="text-2xl font-bold mb-2">Завдання 5: Кастомізація Екрана Смерті</h2>
+                       <p class="text-gray-700 mb-4 flex-grow">Зробіть екран поразки особливим! Змініть зображення та звук, щоб зробити гру більш атмосферною.</p>
+                       <button onclick="showPage('page-task5')" class="w-full mt-auto bg-purple-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-purple-600 transition-colors">Читати більше</button>
+                   </div>
+               </div>
+               
+               <!-- Завдання 6: Сюжет та Кінцівка -->
+               <div class="task-card bg-white rounded-xl shadow-lg overflow-hidden flex flex-col">
+                   <!-- PHOTO_PLACEHOLDER -->
+                   <img src="https://placehold.co/600x400/f1c40f/ffffff?text=Сюжет" alt="Зображення сюжету" class="w-full h-48 object-cover">
+                   <div class="p-6 flex flex-col flex-grow">
+                       <h2 class="text-2xl font-bold mb-2">Завдання 6: Сюжет, Стиль та Кінцівка Гри</h2>
+                       <p class="text-gray-700 mb-4 flex-grow">Об'єднайте діалоги та квести у єдину історію, оберіть візуальний стиль для світу та продумайте, чим закінчиться пригода.</p>
+                       <button onclick="showPage('page-task6')" class="w-full mt-auto bg-yellow-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-yellow-600 transition-colors">Читати більше</button>
+                   </div>
+               </div>
+           </main>
+       </div>
 
-        <!-- Сторінки з інструкціями (приховані за замовчуванням) -->
-        <div id="task-pages-container">
-            <!-- Інструкція 1 -->
-            <div id="page-task1" class="task-page hidden">
+       <!-- Сторінки з інструкціями (приховані за замовчуванням) -->
+       <div id="task-pages-container">
+           <!-- Інструкція 1: Вибір класів -->
+           <div id="page-task1" class="task-page hidden">
+               <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                   <h1 class="text-4xl font-bold text-blue-600 mb-8 text-center">Інструкція: Вибір Класів Героя</h1>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">1. Підготовка зброї</h2>
+                       <p class="mb-4">Спочатку знайдемо зброю для наших класів у <strong>Toolbox</strong>. Нам потрібен меч для Лицаря та лук для Лучника.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x400/e2e8f0/334155?text=Пошук+зброї+в+Toolbox" alt="Пошук зброї в Toolbox" class="rounded-lg shadow-md mx-auto">
+                       <p class="mt-4">Створіть папку <code>Weapons</code> у <strong>ReplicatedStorage</strong> та перемістіть туди знайдену зброю. Перейменуйте її на <code>KnightSword</code> та <code>ArcherBow</code> відповідно. Це важливо для роботи скриптів!</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x300/e2e8f0/334155?text=Папка+Weapons+в+ReplicatedStorage" alt="Папка Weapons в ReplicatedStorage" class="rounded-lg shadow-md mx-auto mt-2">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">2. Створення меню вибору</h2>
+                       <p class="mb-4">Створимо інтерфейс, де гравець зможе зробити вибір. Додайте <code>ScreenGui</code> в <strong>StarterGui</strong>.</p>
+                       <p class="mb-4">Всередині <code>ScreenGui</code> створіть <code>Frame</code>, який буде фоном, <code>TextLabel</code> для заголовку ("Обери клас гравця"), та два <code>TextButton</code> для вибору Лицаря та Лучника. Додайте також <code>ImageLabel</code> для іконок класів.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x500/e2e8f0/334155?text=Структура+UI+елементів+в+Explorer" alt="Структура UI елементів в Explorer" class="rounded-lg shadow-md mx-auto">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">3. Налаштування кнопок</h2>
+                       <p class="mb-4">До кожної кнопки (<code>TextButton</code>) додайте <code>StringValue</code> і назвіть його <code>Weapon</code>. У властивості <code>Value</code> цього об'єкта впишіть назву відповідної зброї (<code>KnightSword</code> або <code>ArcherBow</code>).</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x300/e2e8f0/334155?text=Налаштування+StringValue+для+кнопки" alt="Налаштування StringValue для кнопки" class="rounded-lg shadow-md mx-auto">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">4. Скрипти для логіки</h2>
+                       <p class="mb-4">Нам знадобиться два скрипти: один локальний для кнопок, інший - серверний для видачі зброї та зміни характеристик.</p>
+                       <p class="mb-2"><strong>Локальний скрипт (вставляється у кожну кнопку):</strong> Він буде повідомляти сервер, який клас обрав гравець.</p>
+                       <p class="mb-2"><strong>Серверний скрипт (в ServerScriptService):</strong> Він отримає повідомлення, видасть гравцю відповідну зброю з папки <code>Weapons</code> та змінить його здоров'я (<code>MaxHealth</code>) і швидкість (<code>WalkSpeed</code>).</p>
+                       <p class="mt-4">Не забудьте додати <code>RemoteEvent</code> в <strong>ReplicatedStorage</strong> і назвати його <code>HandleLoadout</code>. Він слугуватиме для зв'язку між локальним та серверним скриптами.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x250/e2e8f0/334155?text=RemoteEvent+в+ReplicatedStorage" alt="RemoteEvent в ReplicatedStorage" class="rounded-lg shadow-md mx-auto mt-2">
+                   </div>
+                   <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
+               </div>
+           </div>
+           
+           <!-- Інструкція 2: Створення магазину -->
+           <div id="page-task2" class="task-page hidden">
                 <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
-                    <h1 class="text-4xl font-bold text-blue-600 mb-8 text-center">Інструкція: Вибір Класів Героя</h1>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">1. Підготовка зброї</h2>
-                        <p class="mb-4">Спочатку знайдемо зброю для наших класів у <strong>Toolbox</strong>. Нам потрібен меч для Лицаря та лук для Лучника.</p>
-                        <img src="https://placehold.co/800x400/e2e8f0/334155?text=Пошук+зброї+в+Toolbox" alt="Пошук зброї в Toolbox" class="rounded-lg shadow-md mx-auto">
-                        <p class="mt-4">Створіть папку <code>Weapons</code> у <strong>ReplicatedStorage</strong> та перемістіть туди знайдену зброю. Перейменуйте її на <code>KnightSword</code> та <code>ArcherBow</code> відповідно. Це важливо для роботи скриптів!</p>
-                        <img src="https://placehold.co/800x300/e2e8f0/334155?text=Папка+Weapons+в+ReplicatedStorage" alt="Папка Weapons в ReplicatedStorage" class="rounded-lg shadow-md mx-auto mt-2">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">2. Створення меню вибору</h2>
-                        <p class="mb-4">Створимо інтерфейс, де гравець зможе зробити вибір. Додайте <code>ScreenGui</code> в <strong>StarterGui</strong>.</p>
-                        <p class="mb-4">Всередині <code>ScreenGui</code> створіть <code>Frame</code>, який буде фоном, <code>TextLabel</code> для заголовку ("Обери клас гравця"), та два <code>TextButton</code> для вибору Лицаря та Лучника. Додайте також <code>ImageLabel</code> для іконок класів.</p>
-                        <img src="https://placehold.co/800x500/e2e8f0/334155?text=Структура+UI+елементів+в+Explorer" alt="Структура UI елементів в Explorer" class="rounded-lg shadow-md mx-auto">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">3. Налаштування кнопок</h2>
-                        <p class="mb-4">До кожної кнопки (<code>TextButton</code>) додайте <code>StringValue</code> і назвіть його <code>Weapon</code>. У властивості <code>Value</code> цього об'єкта впишіть назву відповідної зброї (<code>KnightSword</code> або <code>ArcherBow</code>).</p>
-                        <img src="https://placehold.co/800x300/e2e8f0/334155?text=Налаштування+StringValue+для+кнопки" alt="Налаштування StringValue для кнопки" class="rounded-lg shadow-md mx-auto">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">4. Скрипти для логіки</h2>
-                        <p class="mb-4">Нам знадобиться два скрипти: один локальний для кнопок, інший - серверний для видачі зброї та зміни характеристик.</p>
-                        <p class="mb-2"><strong>Локальний скрипт (вставляється у кожну кнопку):</strong> Він буде повідомляти сервер, який клас обрав гравець.</p>
-                        <p class="mb-2"><strong>Серверний скрипт (в ServerScriptService):</strong> Він отримає повідомлення, видасть гравцю відповідну зброю з папки <code>Weapons</code> та змінить його здоров'я (<code>MaxHealth</code>) і швидкість (<code>WalkSpeed</code>).</p>
-                        <p class="mt-4">Не забудьте додати <code>RemoteEvent</code> в <strong>ReplicatedStorage</strong> і назвати його <code>HandleLoadout</code>. Він слугуватиме для зв'язку між локальним та серверним скриптами.</p>
-                        <img src="https://placehold.co/800x250/e2e8f0/334155?text=RemoteEvent+в+ReplicatedStorage" alt="RemoteEvent в ReplicatedStorage" class="rounded-lg shadow-md mx-auto mt-2">
-                    </div>
-                    <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
-                </div>
-            </div>
-            
-            <!-- Інструкція 2 -->
-            <div id="page-task2" class="task-page hidden">
-                 <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
-                    <h1 class="text-4xl font-bold text-green-600 mb-8 text-center">Інструкція: Редизайн та Розширення Магазину</h1>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">1. Зміна зовнішнього вигляду</h2>
-                        <p class="mb-4">Зробіть вікно магазину унікальним. Знайдіть його <code>Frame</code> (фон) в <strong>StarterGui</strong> і змініть властивості <code>BackgroundColor3</code> (колір) та <code>BackgroundTransparency</code> (прозорість). Поекспериментуйте з дизайном кнопок та текстових полів.</p>
-                        <img src="https://placehold.co/800x400/e2e8f0/334155?text=Налаштування+дизайну+вікна+магазину" alt="Налаштування дизайну вікна магазину" class="rounded-lg shadow-md mx-auto">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">2. Розширення асортименту</h2>
-                        <p class="mb-4">Знайдіть нові цікаві предмети в <strong>Toolbox</strong>. Перетягніть їх у папку <code>Items</code>, що знаходиться в <strong>ReplicatedStorage</strong>.</p>
-                        <p class="mt-4">Для кожного нового товару обов'язково створіть папку <code>ItemInfo</code>. Всередині неї мають бути:</p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li><strong>StringValue</strong> з назвою <code>ItemName</code> (вкажіть назву товару у властивості <code>Value</code>).</li>
-                            <li><strong>IntValue</strong> з назвою <code>Price</code> (вкажіть ціну товару у властивості <code>Value</code>).</li>
-                        </ul>
-                        <img src="https://placehold.co/800x350/e2e8f0/334155?text=Структура+товару+в+папці+Items" alt="Структура товару в папці Items" class="rounded-lg shadow-md mx-auto mt-2">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">3. Зміна NPC-торговця</h2>
-                        <p class="mb-4">Змініть зовнішній вигляд вашого <code>ShopNPC</code>. Ви можете змінити колір його частин тіла через об'єкт <code>Body Colors</code> або додати новий одяг та аксесуари з <strong>Roblox Catalog</strong>, використовуючи їх <strong>AssetID</strong> та <strong>Command Bar</strong>.</p>
-                        <img src="https://placehold.co/800x400/e2e8f0/334155?text=Зміна+зовнішності+NPC+через+Catalog" alt="Зміна зовнішності NPC" class="rounded-lg shadow-md mx-auto">
-                    </div>
-                    <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
-                </div>
-            </div>
+                   <h1 class="text-4xl font-bold text-teal-600 mb-8 text-center">Інструкція: Створення Магазину з Нуля</h1>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">Крок 1: Готуємо товари</h2>
+                       <p class="mb-4">Спочатку треба підготувати все, що буде продаватися. Знайдіть у <strong>Toolbox</strong> зброю або інструменти та перемістіть їх у папку <code>Items</code>, яку треба створити у <strong>ReplicatedStorage</strong>.</p>
+                       <p class="mb-4">Для кожного товару треба вказати його назву та ціну. Для цього всередині кожного інструменту (наприклад, меча) створіть папку <code>ItemInfo</code>. У цю папку додайте:</p>
+                       <ul class="list-disc list-inside ml-4">
+                           <li><strong>StringValue</strong> з назвою <code>ItemName</code>. У його властивості <code>Value</code> напишіть назву товару (наприклад, "Sword").</li>
+                           <li><strong>IntValue</strong> з назвою <code>Price</code>. У його властивості <code>Value</code> вкажіть ціну (наприклад, 100).</li>
+                       </ul>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://i.postimg.cc/j2Tt503X/Screenshot-53.jpg
+" alt="Структура товару в папці Items" class="rounded-lg shadow-md mx-auto mt-2">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">Крок 2: Створюємо NPC-продавця</h2>
+                       <p class="mb-4">Додайте на карту NPC за допомогою <strong>Rig Builder</strong>. Дуже важливо перейменувати його модель на <code>ShopNPC</code>. Знайдіть у моделі NPC його голову (<code>Head</code>) і додайте до неї об'єкт <code>ProximityPrompt</code>. Цей об'єкт дозволить гравцям відкривати магазин, підійшовши до NPC.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://i.postimg.cc/QCqsK4Rr/Screenshot-54.jpg
+" alt="NPC з ProximityPrompt" class="rounded-lg shadow-md mx-auto mt-2">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">Крок 3: Будуємо інтерфейс магазину (UI)</h2>
+                       <p class="mb-4">Тепер створимо вікно магазину. Всі елементи інтерфейсу створюються у <strong>StarterGui</strong>. Вам треба буде відтворити структуру, як на зображенні нижче. Назви елементів дуже важливі, тому не робіть у них помилок!</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://i.postimg.cc/bJkqpNgr/Screenshot-55.jpg
+" alt="Структура UI елементів магазину" class="rounded-lg shadow-md mx-auto mt-2">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">Крок 4: Точна структура та назви (Дуже важливо!)</h2>
+                       <p class="mb-4">Щоб усі скрипти запрацювали, структура та назви ваших об'єктів мають бути точними. Скопіюйте цю структуру. Символ `>` означає вкладеність (об'єкт справа знаходиться всередині об'єкта зліва).</p>
+                       <div class="structure-box">
+ReplicatedStorage
+> Folder: <strong>Items</strong>
+  > Tool: <strong>ClassicSword</strong> (або інший інструмент)
+    > Folder: <strong>ItemInfo</strong>
+      > StringValue: <strong>ItemName</strong>
+      > IntValue: <strong>Price</strong>
+> RemoteEvent: <strong>BuyItem</strong>
 
-            <!-- Інструкція 3 -->
-            <div id="page-task3" class="task-page hidden">
-                <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
-                    <h1 class="text-4xl font-bold text-red-600 mb-8 text-center">Інструкція: Створення Ворожих NPC</h1>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">1. Створення NPC та точок патрулювання</h2>
-                        <p class="mb-4">Додайте NPC на карту за допомогою <strong>Rig Builder</strong>. Створіть у <strong>Workspace</strong> папку <code>Waypoints</code>. Всередині неї розмістіть кілька партів (<code>Part</code>) - це будуть точки, між якими буде рухатись ваш ворог.</p>
-                        <img src="https://placehold.co/800x400/e2e8f0/334155?text=Папка+Waypoints+з+точками+на+карті" alt="Папка Waypoints" class="rounded-lg shadow-md mx-auto">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">2. Скрипт для руху та атаки</h2>
-                        <p class="mb-4">Додайте до вашого NPC скрипт, який змусить його рухатись між точками в папці <code>Waypoints</code>. Цей же скрипт буде відповідати за логіку атаки: якщо NPC побачить гравця, він почне його переслідувати та атакувати.</p>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">3. Налаштування характеристик</h2>
-                        <p class="mb-4">Зробіть ворога сильнішим або слабшим. Знайдіть у скрипті змінні, що відповідають за шкоду (<code>DAMAGE</code>) та дальність зору (<code>RANGE</code>). Також ви можете змінити його здоров'я (<code>MaxHealth</code>) та швидкість (<code>WalkSpeed</code>) у властивостях об'єкта <code>Humanoid</code> всередині моделі NPC.</p>
-                        <img src="https://placehold.co/800x350/e2e8f0/334155?text=Властивості+Humanoid+у+NPC" alt="Властивості Humanoid" class="rounded-lg shadow-md mx-auto mt-2">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">4. Випадання монет</h2>
-                        <p class="mb-4">Щоб після смерті з ворога випадали монети, спочатку створіть префаб монети (<code>MoneyPart</code> з усіма скриптами) і помістіть його в <strong>ReplicatedStorage</strong>. Потім додайте до NPC ще один скрипт (назвіть його <code>DropCoin</code>), який при смерті NPC буде створювати копію монети з <strong>ReplicatedStorage</strong> на місці ворога.</p>
-                        <img src="https://placehold.co/800x300/e2e8f0/334155?text=Скрипт+DropCoin+та+монета+в+ReplicatedStorage" alt="Скрипт DropCoin" class="rounded-lg shadow-md mx-auto mt-2">
-                    </div>
-                    <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
-                </div>
-            </div>
+ServerScriptService
+> Script: <strong>Leaderstats</strong> (скрипт для грошей)
+> Script: <strong>ShopScript</strong> (скрипт логіки магазину)
 
-            <!-- Інструкція 4 -->
-            <div id="page-task4" class="task-page hidden">
-                <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
-                    <h1 class="text-4xl font-bold text-purple-600 mb-8 text-center">Інструкція: Кастомізація Екрана Смерті</h1>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">1. Створення GUI для екрану смерті</h2>
-                        <p class="mb-4">У <strong>StarterGui</strong> створіть <code>ScreenGui</code> і назвіть його <code>DeathGui</code>. Всередину додайте <code>ImageLabel</code>, який займатиме весь екран. Знайдіть цікаву картинку для екрану поразки в <strong>Toolbox</strong> (у розділі Decals), скопіюйте її <strong>AssetID</strong> і вставте у властивість <code>Image</code> вашого <code>ImageLabel</code>.</p>
-                        <img src="https://placehold.co/800x400/e2e8f0/334155?text=Налаштування+ImageLabel+для+екрану+смерті" alt="Налаштування ImageLabel" class="rounded-lg shadow-md mx-auto">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">2. Скрипт для показу екрану</h2>
-                        <p class="mb-4">Додайте до <code>ImageLabel</code> локальний скрипт. Він буде слідкувати за здоров'ям гравця. Коли здоров'я стане нульовим, скрипт зробить <code>ImageLabel</code> видимим на кілька секунд, а потім сховає його, коли гравець відродиться.</p>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">3. Зміна звуку смерті</h2>
-                        <p class="mb-4">Щоб змінити стандартний звук смерті, запустіть гру. В <strong>Explorer</strong> знайдіть свого гравця, розкрийте його, і в папці <strong>StarterCharacterScripts</strong> знайдіть скрипт <code>RbxCharacterSounds</code>. Скопіюйте його.</p>
-                        <p class="mb-4">Зупиніть гру. Вставте скопійований скрипт у папку <strong>StarterPlayer → StarterCharacterScripts</strong>. Тепер відкрийте цей скрипт. Знайдіть рядок, що відповідає за звук смерті (<code>Died</code>), і замініть його <strong>SoundID</strong> на ID будь-якого іншого звуку з <strong>Toolbox</strong> (наприклад, кумедного).</p>
-                        <img src="https://placehold.co/800x350/e2e8f0/334155?text=Редагування+скрипту+RbxCharacterSounds" alt="Редагування скрипту звуків" class="rounded-lg shadow-md mx-auto mt-2">
-                    </div>
-                    <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
-                </div>
-            </div>
+Workspace
+> Model: <strong>ShopNPC</strong>
+  > Part: <strong>Head</strong>
+    > ProximityPrompt: <strong>ProximityPrompt</strong>
 
-            <!-- Інструкція 5 -->
-            <div id="page-task5" class="task-page hidden">
-                <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
-                    <h1 class="text-4xl font-bold text-yellow-500 mb-8 text-center">Інструкція: Створення Легендарного Скарбу</h1>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">1. Створення унікального артефакту</h2>
-                        <p class="mb-4">Замість звичайної монетки, створіть унікальний об'єкт. Це може бути великий кристал, золотий кубок або будь-який інший <strong>MeshPart</strong> з <strong>Toolbox</strong>. Назвіть його <code>TreasurePart</code>.</p>
-                        <p class="mb-4">Додайте до нього <code>IntValue</code> та встановіть дуже високу цінність (наприклад, 500 або 1000). Переконайтеся, що до артефакту додані скрипти <code>Collect</code> для підбирання та <code>Floating</code> для анімації, як ви робили для звичайних монет.</p>
-                        <img src="https://placehold.co/800x400/e2e8f0/334155?text=Модель+скарбу+з+IntValue" alt="Модель скарбу" class="rounded-lg shadow-md mx-auto">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">2. Сховайте скарб</h2>
-                        <p class="mb-4">Найцікавіше - це заховати скарб. Ось кілька ідей:</p>
-                        <ul class="list-disc list-inside ml-4 space-y-2">
-                            <li><strong>Паркур-випробування:</strong> Побудуйте складну трасу з платформами, пастками та перешкодами. Розмістіть скарб на фініші як нагороду.</li>
-                            <li><strong>Таємний квест:</strong> Розмістіть по карті кілька ключів або менших кристалів. Створіть логіку, за якою після збору всіх предметів гравця телепортує у секретну кімнату зі скарбом.</li>
-                        </ul>
-                        <img src="https://placehold.co/800x450/e2e8f0/334155?text=Приклад+паркур-випробування+для+скарбу" alt="Приклад паркур-випробування" class="rounded-lg shadow-md mx-auto mt-4">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">3. Використання телепортів</h2>
-                        <p class="mb-4">Телепорти допоможуть вам переміщати гравця. Ви можете створити телепорт, який веде до початку випробування, або телепорт, який з'являється після виконання квесту і веде до кімнати зі скарбом.</p>
-                    </div>
-                    <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
-                </div>
-            </div>
+StarterGui
+> ScreenGui: <strong>Shop</strong>
+  > Frame: <strong>Background</strong>
+    > TextButton: <strong>CloseButton</strong>
+    > ScrollingFrame: <strong>List</strong>
+      > UIGridLayout: <strong>UIGridLayout</strong>
+      > Frame: <strong>Template</strong> (зробіть його невидимим - Visible=false)
+        > ImageLabel: <strong>ItemImage</strong>
+        > TextLabel: <strong>ItemName</strong>
+        > TextLabel: <strong>Price</strong>
+        > TextButton: <strong>Buy</strong>
+  > Script: <strong>LocalScript</strong> (локальний скрипт для роботи UI)
+                       </div>
+                       <p class="mt-4">Не забудьте додати всі необхідні скрипти (Leaderstats, ShopScript, LocalScript) з файлів курсу.</p>
+                   </div>
+                   <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
+               </div>
+           </div>
 
-            <!-- Інструкція 6 -->
-            <div id="page-task6" class="task-page hidden">
-                <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
-                    <h1 class="text-4xl font-bold text-teal-600 mb-8 text-center">Інструкція: Привітальний NPC</h1>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">1. Створення NPC та діалогу</h2>
-                        <p class="mb-4">Додайте нового NPC за допомогою <strong>Rig Builder</strong> і розмістіть його на стартовій точці (спавні). Знайдіть у його моделі деталь <code>Head</code> і додайте до неї об'єкт <code>Dialog</code>.</p>
-                        <img src="https://placehold.co/800x300/e2e8f0/334155?text=Додавання+об'єкту+Dialog+до+голови+NPC" alt="Додавання Dialog" class="rounded-lg shadow-md mx-auto">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">2. Налаштування початкового повідомлення</h2>
-                        <p class="mb-4">У властивостях об'єкта <code>Dialog</code> знайдіть <code>InitialPrompt</code>. У це поле введіть текст, який NPC скаже при першому наближенні гравця. Наприклад: "Вітаю, мандрівнику!".</p>
-                        <img src="https://placehold.co/800x350/e2e8f0/334155?text=Властивості+об'єкту+Dialog" alt="Властивості Dialog" class="rounded-lg shadow-md mx-auto">
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-bold mb-3">3. Додавання гілок діалогу</h2>
-                        <p class="mb-4">Щоб створити розмову, додайте до об'єкта <code>Dialog</code> один або кілька об'єктів <code>DialogChoice</code>. Кожен <code>DialogChoice</code> - це варіант відповіді для гравця.</p>
-                        <p class="mb-4">У властивості <code>UserDialog</code> кожного <code>DialogChoice</code> впишіть варіант відповіді гравця. У властивості <code>ResponseDialog</code> - те, що NPC відповість на цей вибір.</p>
-                        <p class="mb-4">Ви можете створювати цілі дерева діалогів, додаючи нові <code>DialogChoice</code> всередину інших, щоб розмова продовжувалась.</p>
-                        <img src="https://placehold.co/800x450/e2e8f0/334155?text=Створення+дерева+діалогів" alt="Дерево діалогів" class="rounded-lg shadow-md mx-auto mt-2">
-                    </div>
-                    <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
-                </div>
-            </div>
-        </div>
-    </div>
+           <!-- Інструкція 3: Редизайн магазину -->
+           <div id="page-task3" class="task-page hidden">
+               <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                   <h1 class="text-4xl font-bold text-green-600 mb-8 text-center">Інструкція: Редизайн та Розширення Магазину</h1>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">1. Зміна зовнішнього вигляду</h2>
+                       <p class="mb-4">Якщо у вас вже є магазин, зробіть його вікно унікальним. Знайдіть його головний <code>Frame</code> (фон) в <strong>StarterGui</strong> і змініть властивості <code>BackgroundColor3</code> (колір) та <code>BackgroundTransparency</code> (прозорість). Поекспериментуйте з дизайном кнопок та текстових полів, змініть шрифти та кольори.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x400/e2e8f0/334155?text=Налаштування+дизайну+вікна+магазину" alt="Налаштування дизайну вікна магазину" class="rounded-lg shadow-md mx-auto">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">2. Розширення асортименту</h2>
+                       <p class="mb-4">Знайдіть нові цікаві предмети в <strong>Toolbox</strong>. Перетягніть їх у папку <code>Items</code>, що знаходиться в <strong>ReplicatedStorage</strong>.</p>
+                       <p class="mt-4">Для кожного нового товару обов'язково створіть папку <code>ItemInfo</code>. Всередині неї мають бути:</p>
+                       <ul class="list-disc list-inside ml-4">
+                           <li><strong>StringValue</strong> з назвою <code>ItemName</code> (вкажіть назву товару у властивості <code>Value</code>).</li>
+                           <li><strong>IntValue</strong> з назвою <code>Price</code> (вкажіть ціну товару у властивості <code>Value</code>).</li>
+                       </ul>
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">3. Зміна NPC-торговця</h2>
+                       <p class="mb-4">Змініть зовнішній вигляд вашого <code>ShopNPC</code>. Ви можете змінити колір його частин тіла через об'єкт <code>Body Colors</code> або додати новий одяг та аксесуари з <strong>Roblox Catalog</strong>, використовуючи їх <strong>AssetID</strong> та <strong>Command Bar</strong>.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x400/e2e8f0/334155?text=Зміна+зовнішності+NPC+через+Catalog" alt="Зміна зовнішності NPC" class="rounded-lg shadow-md mx-auto">
+                   </div>
+                   <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
+               </div>
+           </div>
 
-    <script>
-        const homePage = document.getElementById('home-page');
-        const taskPages = document.querySelectorAll('.task-page');
+           <!-- Інструкція 4: Ворожі NPC -->
+           <div id="page-task4" class="task-page hidden">
+               <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                   <h1 class="text-4xl font-bold text-red-600 mb-8 text-center">Інструкція: Створення Ворожих NPC</h1>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">1. Створення NPC та точок патрулювання</h2>
+                       <p class="mb-4">Додайте NPC на карту за допомогою <strong>Rig Builder</strong>. Створіть у <strong>Workspace</strong> папку <code>Waypoints</code>. Всередині неї розмістіть кілька партів (<code>Part</code>) - це будуть точки, між якими буде рухатись ваш ворог.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x400/e2e8f0/334155?text=Папка+Waypoints+з+точками+на+карті" alt="Папка Waypoints" class="rounded-lg shadow-md mx-auto">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">2. Скрипт для руху та атаки</h2>
+                       <p class="mb-4">Додайте до вашого NPC скрипт, який змусить його рухатись між точками в папці <code>Waypoints</code>. Цей же скрипт буде відповідати за логіку атаки: якщо NPC побачить гравця, він почне його переслідувати та атакувати.</p>
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">3. Налаштування характеристик</h2>
+                       <p class="mb-4">Зробіть ворога сильнішим або слабшим. Знайдіть у скрипті змінні, що відповідають за шкоду (<code>DAMAGE</code>) та дальність зору (<code>RANGE</code>). Також ви можете змінити його здоров'я (<code>MaxHealth</code>) та швидкість (<code>WalkSpeed</code>) у властивостях об'єкта <code>Humanoid</code> всередині моделі NPC.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x350/e2e8f0/334155?text=Властивості+Humanoid+у+NPC" alt="Властивості Humanoid" class="rounded-lg shadow-md mx-auto mt-2">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">4. Випадання монет</h2>
+                       <p class="mb-4">Щоб після смерті з ворога випадали монети, спочатку створіть префаб монети (<code>MoneyPart</code> з усіма скриптами) і помістіть його в <strong>ReplicatedStorage</strong>. Потім додайте до NPC ще один скрипт (назвіть його <code>DropCoin</code>), який при смерті NPC буде створювати копію монети з <strong>ReplicatedStorage</strong> на місці ворога.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x300/e2e8f0/334155?text=Скрипт+DropCoin+та+монета+в+ReplicatedStorage" alt="Скрипт DropCoin" class="rounded-lg shadow-md mx-auto mt-2">
+                   </div>
+                   <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
+               </div>
+           </div>
 
-        function showPage(pageId) {
-            // Hide home page
-            homePage.classList.add('hidden');
-            
-            // Hide all task pages
-            taskPages.forEach(page => {
-                page.classList.add('hidden');
-            });
-            
-            // Show the selected task page
-            const pageToShow = document.getElementById(pageId);
-            if (pageToShow) {
-                pageToShow.classList.remove('hidden');
-                window.scrollTo(0, 0); // Прокрутка наверх сторінки
-            }
-        }
+           <!-- Інструкція 5: Екран смерті -->
+           <div id="page-task5" class="task-page hidden">
+               <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                   <h1 class="text-4xl font-bold text-purple-600 mb-8 text-center">Інструкція: Кастомізація Екрана Смерті</h1>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">1. Створення GUI для екрану смерті</h2>
+                       <p class="mb-4">У <strong>StarterGui</strong> створіть <code>ScreenGui</code> і назвіть його <code>DeathGui</code>. Всередину додайте <code>ImageLabel</code>, який займатиме весь екран. Знайдіть цікаву картинку для екрану поразки в <strong>Toolbox</strong> (у розділі Decals), скопіюйте її <strong>AssetID</strong> і вставте у властивість <code>Image</code> вашого <code>ImageLabel</code>.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x400/e2e8f0/334155?text=Налаштування+ImageLabel+для+екрану+смерті" alt="Налаштування ImageLabel" class="rounded-lg shadow-md mx-auto">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">2. Скрипт для показу екрану</h2>
+                       <p class="mb-4">Додайте до <code>ImageLabel</code> локальний скрипт. Він буде слідкувати за здоров'ям гравця. Коли здоров'я стане нульовим, скрипт зробить <code>ImageLabel</code> видимим на кілька секунд, а потім сховає його, коли гравець відродиться.</p>
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">3. Зміна звуку смерті</h2>
+                       <p class="mb-4">Щоб змінити стандартний звук смерті, запустіть гру. В <strong>Explorer</strong> знайдіть свого гравця, розкрийте його, і в папці <strong>StarterCharacterScripts</strong> знайдіть скрипт <code>RbxCharacterSounds</code>. Скопіюйте його.</p>
+                       <p class="mb-4">Зупиніть гру. Вставте скопійований скрипт у папку <strong>StarterPlayer → StarterCharacterScripts</strong>. Тепер відкрийте цей скрипт. Знайдіть рядок, що відповідає за звук смерті (<code>Died</code>), і замініть його <strong>SoundID</strong> на ID будь-якого іншого звуку з <strong>Toolbox</strong> (наприклад, кумедного).</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x350/e2e8f0/334155?text=Редагування+скрипту+RbxCharacterSounds" alt="Редагування скрипту звуків" class="rounded-lg shadow-md mx-auto mt-2">
+                   </div>
+                   <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
+               </div>
+           </div>
+           
+           <!-- Інструкція 6: Сюжет та кінцівка -->
+           <div id="page-task6" class="task-page hidden">
+               <div class="bg-white p-8 rounded-xl shadow-lg space-y-6">
+                   <h1 class="text-4xl font-bold text-yellow-500 mb-8 text-center">Інструкція: Сюжет, Стиль та Кінцівка Гри</h1>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">1. Початок історії: Привітальний NPC</h2>
+                       <p class="mb-4">Щоб гравець зрозумів, що робити, його має хтось зустріти. Створіть на спавні NPC, який за допомогою діалогу розповість про мету гри. Наприклад: "Вітаю, герою! Зле чудовисько викрало легендарний артефакт. Тільки ти можеш його повернути! Перемагай ворогів, збирай монети та купуй кращу зброю, щоб стати сильнішим."</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x450/e2e8f0/334155?text=Створення+дерева+діалогів" alt="Дерево діалогів" class="rounded-lg shadow-md mx-auto mt-2">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">2. Вибір стилю для вашого світу</h2>
+                       <p class="mb-4">Атмосфера гри дуже важлива. Оберіть стиль, який вам до вподоби, і змініть вигляд світу за допомогою інструментів Roblox Studio (освітлення, матеріали, моделі з Toolbox).</p>
+                       <ul class="list-disc list-inside ml-4 space-y-3">
+                           <li><strong>Зачарований Ліс:</strong> Використовуйте зеленувате освітлення, додайте багато дерев та туман (об'єкт <code>Fog</code> в Lighting), щоб створити таємничу атмосферу.</li>
+                           <li><strong>Похмуре Підземелля:</strong> Зробіть світ темним, використовуйте матеріали "Камінь" та "Цегла". Розставте смолоскипи (<code>PointLight</code> з помаранчевим світлом) для освітлення.</li>
+                           <li><strong>Небесне Королівство:</strong> Створіть світлі, яскраві локації на островах, що літають у небі. Використовуйте білі та блакитні кольори, яскраве сонячне освітлення.</li>
+                           <li><strong>Пустельні Руїни:</strong> Налаштуйте освітлення на жовті та помаранчеві відтінки. Використовуйте матеріал "Пісок" та додайте напівзруйновані будівлі.</li>
+                       </ul>
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold mb-3">3. Розвиток сюжету: Пошук скарбу</h2>
+                       <p class="mb-4">Головний квест може бути пов'язаний з пошуком "легендарного артефакту". Сховайте його у важкодоступному місці. Це може бути фінальна нагорода, що завершує гру.</p>
+                       <!-- PHOTO_PLACEHOLDER -->
+                       <img src="https://placehold.co/800x400/e2e8f0/334155?text=Модель+скарбу+в+секретній+кімнаті" alt="Модель скарбу" class="rounded-lg shadow-md mx-auto mt-2">
+                   </div>
+                   <div>
+                       <h2 class="text-2xl font-bold text-red-600 mb-3">4. Варіанти Кінцівки Гри</h2>
+                       <p class="mb-4">Кожна історія має закінчуватися. Ось кілька простих ідей для фіналу вашої RPG:</p>
+                       <ul class="list-disc list-inside ml-4 space-y-3">
+                           <li><strong>Кінцівка А: Перемога над Головним Босом.</strong> Створіть дуже сильного ворога (збільште йому здоров'я та шкоду). Сховайте його в кінці підземелля. Після перемоги над ним з'являється NPC, який вітає гравця з перемогою.</li>
+                           <li><strong>Кінцівка Б: Великий Колекціонер.</strong> Гра закінчується, коли гравець знаходить легендарний скарб ТА купує найдорожчий предмет у магазині. Після цього його телепортує до тронної зали, де "король" (ще один NPC) дякує йому.</li>
+                           <li><strong>Кінцівка В: Мирний Шлях.</strong> Гравець має виконати квести-діалоги у 3-4 різних NPC по всій карті. Коли всі квести виконано, привітальний NPC дає йому фінальну нагороду і каже, що світ врятовано.</li>
+                       </ul>
+                   </div>
+                   <button onclick="showHome()" class="inline-block mt-8 bg-gray-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">Повернутись на головну</button>
+               </div>
+           </div>
+       </div>
+   </div>
 
-        function showHome() {
-            // Hide all task pages
-            taskPages.forEach(page => {
-                page.classList.add('hidden');
-            });
-            
-            // Show home page
-            homePage.classList.remove('hidden');
-            window.scrollTo(0, 0); // Прокрутка наверх сторінки
-        }
-    </script>
+   <script>
+       const homePage = document.getElementById('home-page');
+       const taskPages = document.querySelectorAll('.task-page');
+
+       function showPage(pageId) {
+           // Hide home page
+           homePage.classList.add('hidden');
+           
+           // Hide all task pages
+           taskPages.forEach(page => {
+               page.classList.add('hidden');
+           });
+           
+           // Show the selected task page
+           const pageToShow = document.getElementById(pageId);
+           if (pageToShow) {
+               pageToShow.classList.remove('hidden');
+               window.scrollTo(0, 0); // Прокрутка наверх сторінки
+           }
+       }
+
+       function showHome() {
+           // Hide all task pages
+           taskPages.forEach(page => {
+               page.classList.add('hidden');
+           });
+           
+           // Show home page
+           homePage.classList.remove('hidden');
+           window.scrollTo(0, 0); // Прокрутка наверх сторінки
+       }
+   </script>
 
 </body>
 </html>
